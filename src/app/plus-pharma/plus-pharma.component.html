@@ -1,0 +1,132 @@
+<mat-card class="container-custom"> 
+  <div class="row header">
+    <div class="col-md-7">
+      <iframe [src]="'https://www.youtube.com/embed/9OgWUIXFg_U'  | sanitize: 'resourceUrl'" frameborder="0" allow="autoplay; encrypted-media" class="full" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-5">
+      <div class="links">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/PlusPharma.Apteki/" target="_blank" class="facebookBg" mat-mini-fab>
+              <mat-icon svgIcon="facebook"></mat-icon>
+            </a>
+          </li>
+          <li >
+            <a href="https://twitter.com/PlusPharma_" target="_blank" class="twitterBg" mat-mini-fab>
+              <mat-icon svgIcon="twitter"></mat-icon>
+            </a>
+          </li>
+          <li >
+            <a href="https://www.instagram.com/pluspharma_apteki/" target="_blank" class="instagramBg" mat-mini-fab>
+              <mat-icon svgIcon="instagram" class="mb-1"></mat-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCNEX0SOZsG5YxMFoNfhqffg" target="_blank" class="youtubeBg" mat-mini-fab>
+              <mat-icon>smart_display</mat-icon>
+            </a>
+          </li>
+          <li>
+            <a [href]="'mailto: info@pluspharma.mk'" target="_blank" class="mailBg" mat-mini-fab>
+              <mat-icon>mail</mat-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <!-- <span>Tags</span> -->
+        <ul class="list-inline">
+          <li>ГРИЖА</li>
+          <li>КВАЛИТЕТ</li>
+          <li>ПРОФЕСИОНАЛНОСТ</li>
+          <li>ОДГОВОРНОСТ</li>
+          <li>ИНТЕГРИТЕТ</li>
+          <li>СОРАБОТКА</li>
+          <li>ПОЧИТУВАЊЕ</li>
+          <li>ИНОВАТИВНОСТ</li>
+          <li>СОЦИЈАЛНА ОДГОВОРНОСТ</li>
+        </ul>
+      </div>
+      <div class="capacity mr-3 mb-2"  [ngClass]="'on'">
+        <mat-icon>groups</mat-icon>
+        <div><span>Повеќе од 405 000 задоволни пациенти</span></div>
+      </div>
+      <div class="capacity mr-3 mb-2"  [ngClass]="'blue'">
+        <mat-icon>psychology</mat-icon>
+        <div><span>Повеќе од 445 искусни фармацевти</span></div>
+      </div>
+      <div class="capacity mr-3 mb-2"  [ngClass]="'off'">
+        <mat-icon>store</mat-icon>
+        <span>Повеќе од 170 успешни индивдидуални аптеки</span>
+    </div>
+      <div class="color-A59EAA">
+        <div class="location-details">
+          <div class="location-item mb-2" >
+            <mat-icon>location_on</mat-icon>
+            <span>Насекаде во Македонија</span>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <div class="action-item">
+            <button mat-raised-button color="accent" class="center-icon">
+                <a style="color: white;" href="http://vasaptekar.mk/index.php/magazin" target="_blank">
+                  <span>Ваш аптекар</span>
+                </a> 
+            </button>
+        </div>
+        <div class="action-item" >
+            <button mat-raised-button class="btn-join" >
+              <a style="color: white;" href="https://pluspharma.mk/" target="_blank">
+                <span>Plus Pharma</span>
+              </a> 
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+<mat-card class="container-custom mt-3"> 
+  <div class="row header">
+    <div class="col-md-7">
+      <h1>Добредојдовте во Аптеки PlusPharma</h1>
+      <p>Бренд на индивидуални аптеки со кои е воспоставен чесен партнерски однос со висока почит. Тим кој нуди несебична грижа за пациентите преку стручни фармацевтски совети и едуцирање пред и по набавките со цел да се подобрат и продолжат животите на луѓето. Грижа, помош, совети за превенција и употреба на фармацевтски производи за подобро здравје и живот.</p>
+      <p>Како независни фармацевти, одвојуваме време за да се осигураме дека
+        Вие добивате врвна грижа. Обезбедуваме повисоко ниво на лично внимание
+        и доверливи совети кои нема да ги добиете на друго место.
+        Во секоја индивидуална PlusPharma аптека, ќе најдете фармацевт кој ве познава по име,
+        а не по број. Нашите фармацевти се тука кога најмногу ви требаат.
+        Само на тој начин обезбедуваме врвна грижата и квалитетна услуга.</p>
+    </div>
+    <div class="col-md-5">
+      <div class="care-img">
+        <img src="../../assets/images/care_pharma.png" />
+      </div>
+    </div>
+  </div>
+</mat-card>
+
+<mat-card class="container-custom mt-3"> 
+  <h1 class="text-center">Ваш Аптекар</h1>
+  <div class="row header">
+    <div class="col-md-4">
+      <a class="aptekar-img" href="https://pluspharma.mk/spisanie-vas-aptekar/vash-aptekar-41/" target="_blank">
+        <img src="../../assets/images/aptekar.png" />
+        <span class="text-center">Списание број 41</span>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a class="aptekar-img" href="https://pluspharma.mk/spisanie-vas-aptekar/vash-aptekar-40/" target="_blank">
+        <img src="../../assets/images/aptekar1.png" />
+        <span class="text-center">Списание број 40</span>
+      </a>
+    </div>
+    <div class="col-md-4">
+      <a class="aptekar-img" href="https://pluspharma.mk/spisanie-vas-aptekar/vash-aptekar-39/" target="_blank">
+        <img src="../../assets/images/aptekar2.png" />
+        <span class="text-center">Списание број 39</span>
+      </a>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,19 @@
+
+<div class="d-flex justify-content-center auth-holder">
+  <div class="card">
+    <mat-card class="holder">
+    <div class="logo">
+      <img [src]=imgUrl />
+    </div>
+    <div>
+      <div [class.d-none]="(isLoading | async)">
+        <app-login *ngIf="(switchMode | async)==='SignIn'"></app-login>
+        <app-register *ngIf="(switchMode | async)=== 'SignUp'"></app-register>
+        <div class="error" *ngIf="(errMsg | async)">{{errMsg | async}}</div>
+      </div>
+      <app-loading-spinner color="#fff" *ngIf="(isLoading | async)"></app-loading-spinner>
+    </div>
+
+  </mat-card>
+  </div>
+</div>

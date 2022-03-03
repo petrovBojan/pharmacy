@@ -1,0 +1,7 @@
+.img {
+  width: 100%;
+}
+.base-info {
+  display: grid;
+  align-content: space-around;
+}

@@ -1,0 +1,10 @@
+<div class="all">
+  <h4 class="mb-2 font-weight-bold text-center">{{data.title}}</h4>
+  <div>
+    <div class="subtitle-center" [class.mb-3]="!data.hideButtons" [innerHTML]='data.subtitle'></div>
+    <div [class.d-none]="data.hideButtons" class="btn-sec float-right">
+      <button type="button" mat-button class="mr-2" (click)='onReject()'>Не</button>
+      <button type="button" mat-raised-button color="primary" (click)='onApprove()'>Да</button>
+    </div>
+  </div>
+</div>

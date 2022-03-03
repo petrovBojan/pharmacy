@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family:  Montserrat,Helvetica Neue,sans-serif!important; }
+.w100 {
+  width: 100%;
+}
+*:not(.mat-icon){
+  font-family: 'Montserrat',Helvetica Neue,sans-serif !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-inner-containe .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #4caf50;
+  border: solid 2px #4caf50 !important;
+}
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element, .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: #4caf50;
+}
+.mat-radio-button:not(.mat-radio-button-disabled).mat-accent .mat-ripple-element, .mat-radio-button:active:not(.mat-radio-button-disabled).mat-accent .mat-ripple-element {
+  background: #4caf50;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #4caf50;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.primary {
+  color: #4caf50 !important;
+}
+.primary-color {
+  background-color: #4caf50 !important;
+}
+.link-decor {
+  color: #4caf50;
+}
+.link-decor:hover {
+  color: #338836;
+  text-decoration: none;
+  cursor: pointer;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #4caf5086 !important;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #4caf50 !important;
+}
+.custom-modalbox .mat-dialog-container{width:100%!important;}
+.custom-modalbox .close-button {
+    box-shadow: none;
+    outline: none;
+    background-color: #4caf50;    position: absolute;
+    top: -15px;
+    right: -15px; cursor: pointer;
+}
+.close-button .mat-icon {
+    color: #ffffff;
+}
+.custom-modalbox main, .edit-mode-with-header main,.edit-mode main{
+  overflow: hidden;
+  overflow-y: auto;
+}
+.custom-modalbox main {
+  max-height: calc(100vh - 280px);
+}.custom-modalbox .mat-dialog-content,
+.custom-modalbox main{    margin: 0 -20px;
+  padding: 0 20px;}
+.edit-mode-with-header main{padding: 0 20px;    margin-right: 10px;
+  max-height: calc(100vh - 240px);}
+.edit-mode main{padding: 0 20px;margin-right: 10px;
+  max-height: calc(100vh - 200px);}
+.edit-mode footer,
+.edit-mode-with-header footer{
+  padding-right: 45px;
+  margin-top: 20px;
+  text-align: right;
+}
+.custom-modalbox footer {
+  margin-top: 20px;
+  text-align: right;
+}
+.multiple-select-fix {
+  width: 95% !important;
+  transform: translateX(25px) !important;
+}
+
+.hide-jsd-widget #jsd-widget{visibility: hidden;}
+.show-jsd-widget #jsd-widget{visibility: visible;}
+iframe[name='JSD widget']{
+  left:0px;
+}
+@media (max-width: 768px) {
+.custom-modalbox{
+  width: 100%!important;
+  max-width: 90%!important;
+  margin:65px auto 10px!important;
+  height: calc(100vh - 75px)!important;
+}
+.custom-modalbox .mat-dialog-container {
+ overflow: hidden;
+}
+.edit-mode-with-header main,
+.custom-modalbox .mat-dialog-content,
+.custom-modalbox main{
+  max-height: calc(100vh - 280px);}
+  .custom-modalbox.with-header main{
+    max-height: calc(100vh - 300px);
+  }
+  .custom-modalbox main.inviteForm {
+    max-height: calc(100vh - 300px)!important;
+}
+  .edit-mode main{
+    max-height: calc(100vh - 240px);}
+.edit-mode footer,
+.edit-mode-with-header footer,
+.custom-modalbox footer {
+    padding-top: 5px;
+    text-align: right;
+    padding-bottom: 15px;
+  }
+  .edit-mode footer,
+.edit-mode-with-header footer{
+  padding-right: 25px;}
+  .custom-modalbox .close-button{
+    right: -10px;
+    top:-10px;
+  }
+  .mat-icon-button.close-button{
+    width: 32px; height: 32px; line-height: 32px;
+  }
+}
+@media(max-width: 500px) {
+  .multiple-select-fix {
+    transform: translateX(0px) !important;
+  }
+}

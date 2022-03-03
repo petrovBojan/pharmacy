@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top">
+  <a class="navbar-brand" >
+    <a [routerLink]="['/products']" class="mr-md-0 mr-2 logo-vendor d-inline-block pr-2">
+      <img class="logo-event" src="../../../../assets/images/biofarm-logo.png"/>
+    </a>
+  </a>
+  <button class="navbar-toggler" (click)="toggleNav()"
+   type="button">
+    <div class="hamburger" [class.open]="opened">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+  <div class="mr-auto collapsible" [@slideFromLeft]="opened" [@.disabled]="!isHandset" *ngIf="opened">
+    <div class="mr-auto personal">
+      <ul class="navbar-nav mr-auto main-menu">
+        <li class="nav-item">
+          <a [routerLink]="['/home']" (click)="toggleNav()" class="events" routerLinkActive="active">
+            <mat-icon class="matIcon ">home</mat-icon>
+            <span class="">Почетна</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/products']" (click)="toggleNav()" class="events" routerLinkActive="active">
+            <mat-icon class="matIcon ">store</mat-icon>
+            <span class="">Производи</span>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="logged">
+          <a [routerLink]="['/settings']" (click)="toggleNav()" class="events" routerLinkActive="active">
+            <mat-icon class="matIcon ">settings</mat-icon>
+            <span class="">Подесувања</span>
+          </a>
+        </li>
+        <li class="nav-item" >
+          <a [routerLink]="['/emploees']" (click)="toggleNav()" routerLinkActive="active">
+            <mat-icon class="matIcon">groups</mat-icon>
+            <span class="">Нашиот Тим</span>
+          </a>
+        </li>
+        <li class="nav-item" >
+          <a [routerLink]="['/about']" (click)="toggleNav()" routerLinkActive="active">
+            <mat-icon class="matIcon">dashboard</mat-icon>
+            <span class="">За нас</span>
+          </a>
+        </li>
+        <li class="nav-item" >
+          <a [routerLink]="['/plus-pharma']" (click)="toggleNav()" routerLinkActive="active">
+            <mat-icon class="matIcon">dashboard</mat-icon>
+            <span class="">Plus Pharma</span>
+          </a>
+        </li>
+        <li class="nav-item"  *ngIf="isHandset && logged">
+          <a (click)=logout()>
+            <mat-icon class="matIcon"> logout</mat-icon>
+            <span class="">Logout</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- <a>
+        <mat-icon svgIcon="bookmark"></mat-icon>
+      </a> -->
+    </div>
+  </div>
+  <ng-container *ngIf="!isHandset && logged">
+    <a class="user cursor-pointer" [matMenuTriggerFor]="menu" (click)="toggleNav()" >
+      <mat-icon  class="profile_img" >person</mat-icon>
+    </a>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item (click)=logout()>
+        <mat-icon  class="smallIcon" >logout</mat-icon>
+        <span>Logout</span>
+      </a>
+    </mat-menu>
+  </ng-container>
+</nav>
+

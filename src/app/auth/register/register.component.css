@@ -1,0 +1,38 @@
+form {
+  width: 100%;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #000;
+  font-weight: 300;
+}
+
+.input-group-text,
+.form-signup .form-control {
+  border: 0 none;
+  background-color: #fff;
+  color: #000;
+  height: 50px;
+}
+
+  .form-signup .form-control:focus {
+    box-shadow: none;
+  }
+
+.passToggler {
+  background-color: #fff;
+  border: 0 none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+  .passToggler:focus {
+    outline: none;
+  }
+  .form-signup .mat-icon,
+  .passToggler .mat-icon {
+    color: #a59eaa;
+  }
+

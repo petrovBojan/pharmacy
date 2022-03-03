@@ -1,0 +1,46 @@
+<div  class="add-btn mb-3" *ngIf="logged">
+  <button mat-button type="button"  (click)="onAdd(null)">Додади нов член</button>
+</div>
+
+<div class="row" >
+  <div  class="col-md-6" *ngFor="let emploee of emploees">
+    <mat-card class="person-card mat-elevation-z3 mb-3">
+      <div class="person justify-content-between align-items-center ">
+        <div class="d-flex">
+          <div class="image-holder mr-3">
+            <img class="userPhoto" [src]="emploee.image || '../../assets/images/user-photo.png'">
+          </div>
+          <div class="details">
+            <div class="follow-person">
+              <span class="userName one-line-wrap pt-1" >{{emploee.firstname}} {{emploee.lastname}}</span>
+            </div>
+            <span class="title one-line-wrap"  *ngIf="emploee.email">
+              <mat-icon class="icon-type">mail</mat-icon>
+              {{emploee.email}}
+            </span>
+            <span class="title one-line-wrap" *ngIf="emploee.contact">
+              <mat-icon class="icon-type">phone</mat-icon>
+              {{emploee.contact}}
+            </span>
+            <span class="title one-line-wrap" *ngIf="emploee.education">
+              <mat-icon class="icon-type">school</mat-icon>
+              {{emploee.education}}
+            </span>
+            <span class="one-line-wrap attendee-type" *ngIf="emploee.jobtitle">
+              <mat-icon class="icon-type">badge</mat-icon>
+              {{emploee.jobtitle}}
+            </span>
+            <span  class="one-line-wrap attendee-type" *ngIf="emploee.workYearsNum">
+              <mat-icon class="icon-type">psychology</mat-icon>
+              {{emploee.workYearsNum}} работно искуство
+            </span>
+          </div>
+        </div>
+        <div class="actions" *ngIf="logged">
+            <button  mat-raised-button color="primary" class="main-btn mb-2" type="button" (click)="onAdd(emploee)">Ажурирај</button>
+            <button  mat-raised-button  class="main-btn mt-2 text-danger" type="button" (click)="removeEmployee(emploee)">Избриши</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

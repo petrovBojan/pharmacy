@@ -1,0 +1,12 @@
+.carosel-holder {
+  margin-bottom: 20px;
+  height: 400px;
+}
+
+::ng-deep .carosel-holder .carousel-cells .carousel-cell img {
+  object-fit: contain !important;
+}
+
+::ng-deep .carosel-holder carousel {
+  z-index: 10 !important;
+}

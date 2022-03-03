@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>{{emploee.name}}</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <img class="img" [src]="emploee.img">
+    </div>
+    <div class="col-md-6 base-info">
+      <div>
+        <b>Работна позиција:</b><span>  {{emploee.jobTitle}}</span>
+      </div>
+      <div>
+        <b>Професија:</b><span>{{emploee.education}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="description">
+    <span>{{emploee.description}}</span>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+/* .person-card {
+  padding: 0 16px;
+} */
+.add-btn button{
+  color: #fff;
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
+}
+
+.person {
+  height: fit-content;
+  min-height: 140px;
+  width: 100%;
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .person {
+    height: fit-content;
+    display: block;
+  }
+}
+.w-5 {
+  width: 5%;
+}
+.w-10 {
+  width: 10%;
+}
+.w-20 {
+  width: 20%;
+}
+.w-30 {
+  width: 30%;
+}
+.w-40 {
+  width: 40%;
+}
+.wl-100 {
+  width: 100px;
+}
+.image-holder {
+  display: flex;
+  flex-direction: column;
+}
+
+.userPhoto {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+.text-wrap {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.details {
+  display: grid;
+  min-width: calc(100% - 80px);
+}
+.userName {
+  font: 600 16px/20px 'Lato';
+  color: #000;
+}
+.title {
+  font: 14px/20px 'Lato';
+  color: #000;
+  margin-right: 20px;
+}
+.one-line-wrap {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.icon-type {
+  vertical-align: middle;
+  color: #4caf50;
+  margin-right: 5px;
+}
+.attendee-type {
+  font: 12px/16px 'Lato';
+}
+.follow-person {
+  display: flex;
+  vertical-align: bottom;
+}
+.follow-person mat-icon{
+  color: #009EA8;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.fade-gray {
+  color: #acacac !important;
+}
+.actions {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px; 
+}
+@media only screen and (max-width: 768px) {
+  .actions {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .follow-person {
+    min-width: 100%;
+    margin-right: 10px;
+    justify-content: space-between;
+  }
+  .main-btn {
+    margin-right: 4px !important;
+    width: 100%;
+  }
+}

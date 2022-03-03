@@ -1,0 +1,164 @@
+<div style="position: relative;"> 
+  <button mat-icon-button [autofocus]='false' class="close-button ml-auto" type="button" (click)='onClose()' (keydown.enter)="$event.preventDefault()" (keydown.shift.enter)="$event.preventDefault()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <form [formGroup]="addProductForm" (ngSubmit)="submit(addProductForm)" >
+      <h3>{{product ? 'Ажурирај/измени го продуктот': 'Додади нов продукт'}} </h3>
+      <main>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Име на Лекот</mat-label>
+          <input matInput formControlName="title" required>
+          <mat-error *ngIf="addProductForm.controls['title'].invalid && addProductForm.controls['title'].touched">
+            {{ getError("title") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="descr mt-2" floatLabel="always">
+          <mat-label >Опис</mat-label>
+          <input matInput hidden>
+          <quill-editor class="editor"
+            formControlName="description" rows="5" placeholder="Пр: Дејство... + '&#13;' + Доза... + '&#13;' +Несакани ефекти..."></quill-editor>
+            <mat-error *ngIf="addProductForm.controls['description'].invalid && addProductForm.controls['description'].touched">
+              {{ getError("description") }}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Слика</mat-label>
+          <input matInput formControlName="image">
+          <mat-error *ngIf="addProductForm.controls['image'].invalid && addProductForm.controls['image'].touched">
+            {{ getError("image") }}
+          </mat-error>
+        </mat-form-field>
+        <!-- <div class="img-holder mb-3 border-0 text-center" [style.backgroundColor]="'transparent'">
+          <img #logoImg [src]='logoPath' alt="" />
+        </div>
+        <div align="start" class="form-group text-center">
+          <div class="btn-group mr-2">
+            <button class="upload-image-button" mat-raised-button (click)='onUploadLogoClick()'
+                type="button">
+                <mat-icon>image</mat-icon>
+                Chose Logo
+            </button>
+            <button class="upload-image-button" mat-raised-button (click)='uploadLogo()' type="button">
+                <mat-icon>up</mat-icon>
+                Upload Logo
+            </button>
+            <span class="btn">{{logoName}}</span>
+          </div>
+            <input #logoInput type="file" style="display: none;" accept='image/*' class="form-control-file"
+                (change)='onLogoSelect($event)'>
+        </div>
+        <div>
+          <mat-hint class="small">
+            Supported file types: .jpg, .png, .jpeg | Max image size: 5 MB
+          </mat-hint>
+          <mat-error class="error-size mt-2" *ngIf='logoErrorMessage.length > 0'>
+            {{logoErrorMessage}}
+          </mat-error>
+        </div>
+        <div class="alert alert-info mt-2">Note: Preferred logo resolution is 300x300px</div> -->
+
+        <mat-form-field appearance="standard" floatLabel="always" >
+          <mat-label>Фармаколошка група</mat-label>
+          <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+          <mat-select class="hide-arrow" formControlName="productGroup" required disableOptionCentering>
+            <mat-option *ngFor="let item of productGroup" [value]="item.ProductGroupID">
+              {{item.GroupName}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="addProductForm.controls['productType'].invalid && addProductForm.controls['productType'].touched">
+            {{ getError("productType") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard" floatLabel="always" >
+          <mat-label>Фармаколошка форма</mat-label>
+          <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+          <mat-select class="hide-arrow" formControlName="productType" required disableOptionCentering>
+            <mat-option *ngFor="let item of productTypes" [value]="item.ProductTypeID">
+              {{item.Name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="addProductForm.controls['productType'].invalid && addProductForm.controls['productType'].touched">
+            {{ getError("productType") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard" floatLabel="always" >
+          <mat-label>Производител</mat-label>
+          <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
+          <mat-select class="hide-arrow" formControlName="manufacturer" required disableOptionCentering>
+            <mat-option *ngFor="let item of manufacturers" [value]="item.ManufacturerID">
+              {{item.Name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="addProductForm.controls['manufacturer'].invalid && addProductForm.controls['manufacturer'].touched">
+            {{ getError("manufacturer") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Цена</mat-label>
+          <input matInput formControlName="price" required>
+          <mat-error *ngIf="addProductForm.controls['price'].invalid && addProductForm.controls['price'].touched">
+            {{ getError("price") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label>Количина</mat-label>
+          <input matInput formControlName="quantity" required>
+          <mat-error *ngIf="addProductForm.controls['quantity'].invalid && addProductForm.controls['quantity'].touched">
+            {{ getError("quantity") }}
+          </mat-error>
+        </mat-form-field>
+        
+        <div>
+          <mat-label>Го има на залиха</mat-label>
+          <mat-slide-toggle formControlName="haveOnStock"
+              class="custom-toggle d-inline-block"
+              color="primary"
+              [labelPosition]="'before'">
+          </mat-slide-toggle>
+        </div>
+        <!-- <div class="pt-3" [class.d-none]="addProductForm.controls['haveOnStock'].value === false" formArrayName="ourShops">
+          <div  *ngFor="let item of formData.controls; let i = index;">
+            <div  [formGroupName]="i">
+              <div class="fields d-flex">
+                  <div class="checkboxx mr-1">
+                    <mat-checkbox 
+                    color="primary"
+                    formControlName="shopId"
+                    >
+                    </mat-checkbox>
+                  </div>
+                  <div>
+                    <span>{{ourShops[i].Name}}</span>
+                    <input type="text" formControlName="shopName" type="hidden">
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="mt-2">
+          <mat-label>На акција</mat-label>
+          <mat-slide-toggle formControlName="promo"
+              class="custom-toggle d-inline-block"
+              color="primary"
+              [labelPosition]="'before'"
+              (change)="onPromo($event.checked)">
+          </mat-slide-toggle>
+        </div>
+        <mat-form-field [class.d-none]="addProductForm.controls['promo'].value === false" (input)="onInputRate($event.target.value)" appearance="standard" floatLabel="always" >
+          <mat-label>Намаление</mat-label>
+          <input matInput formControlName="percentage" placeholder="e.g. 15%" >
+          <mat-error *ngIf="addProductForm.controls['percentage'].invalid && addProductForm.controls['percentage'].touched">
+            {{ getError("percentage") }}
+          </mat-error>
+        </mat-form-field>
+      </main>
+      <footer>
+        <button mat-button type="button" class="mr-2 btn-cancel" (click)="onClose()"  mat-dialog-close>Затвори</button>
+        <button mat-raised-button color="primary" type="button" (click)="submit(addProductForm)" [disabled]="!addProductForm.valid || isSubmitted">{{product ? 'Зачувај': 'Додади'}}</button>
+      </footer>
+    </form>
+</div>
+
+
+
+

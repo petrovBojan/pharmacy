@@ -1,0 +1,69 @@
+
+mat-form-field{
+  width: 100%;
+  padding-right: 10px;
+}
+::ng-deep .hide-arrow .mat-select-arrow {
+  color: transparent!important;
+}
+
+::ng-deep .mat-form-field-suffix .mat-icon {
+  font-size: 135% !important;
+}
+
+::ng-deep .descr.mat-form-field-appearance-standard .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .editor .ql-container.ql-snow {
+  min-height: 80px !important;
+}
+
+.btn-group{display: block!important;}
+
+.mat-standard-chip {
+  height: fit-content;
+}
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+  background-color: #e0e0e0;
+  color: rgba(0, 0, 0, 0.87);
+}
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary .mat-chip-remove {
+  color: black;
+  opacity: 0.4;
+}
+input:empty {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  } 
+.user-image {
+  height: 34px;
+  width: 34px;
+  margin-right: .5rem;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0
+}
+
+.profile-icon   {
+  width: 34px;
+  height: 34px;
+  font-size: 34px;
+  margin-right: 6px;
+}
+
+.custom-radio-group {
+  display: inline-grid;
+  width: fit-content;
+}
+
+.custom-radio-button {
+  width: fit-content;
+}
+::ng-deep .height-inherit .mat-form-field-appearance-standard .mat-form-field-label {
+  height: inherit !important
+}

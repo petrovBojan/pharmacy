@@ -1,0 +1,74 @@
+<div style="position: relative;"> 
+  <button mat-icon-button [autofocus]='false' class="close-button ml-auto" type="button" (click)='onClose()' (keydown.enter)="$event.preventDefault()" (keydown.shift.enter)="$event.preventDefault()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <form [formGroup]="addEmploeeForm" (ngSubmit)="submit(addEmploeeForm)" >
+      <h3>Додади нов член на тимот</h3>
+      <main>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Име</mat-label>
+          <input matInput formControlName="firstName" required>
+          <mat-error *ngIf="addEmploeeForm.controls['firstName'].invalid && addEmploeeForm.controls['firstName'].touched">
+            {{ getError("firstName") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Презиме</mat-label>
+          <input matInput formControlName="lastName" required>
+          <mat-error *ngIf="addEmploeeForm.controls['lastName'].invalid && addEmploeeForm.controls['lastName'].touched">
+            {{ getError("lastName") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Слика</mat-label>
+          <input matInput formControlName="image">
+          <mat-error *ngIf="addEmploeeForm.controls['image'].invalid && addEmploeeForm.controls['image'].touched">
+            {{ getError("image") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >е-маил</mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="addEmploeeForm.controls['email'].invalid && addEmploeeForm.controls['email'].touched">
+            {{ getError("email") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Контакт број</mat-label>
+          <input matInput formControlName="contact">
+          <mat-error *ngIf="addEmploeeForm.controls['contact'].invalid && addEmploeeForm.controls['contact'].touched">
+            {{ getError("contact") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Образование</mat-label>
+          <input matInput formControlName="education">
+          <mat-error *ngIf="addEmploeeForm.controls['education'].invalid && addEmploeeForm.controls['education'].touched">
+            {{ getError("education") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Работна позиција</mat-label>
+          <input matInput formControlName="jobTitle">
+          <mat-error *ngIf="addEmploeeForm.controls['jobTitle'].invalid && addEmploeeForm.controls['jobTitle'].touched">
+            {{ getError("jobTitle") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Искуство</mat-label>
+          <input matInput formControlName="numberOfWorkYears">
+          <mat-error *ngIf="addEmploeeForm.controls['numberOfWorkYears'].invalid && addEmploeeForm.controls['numberOfWorkYears'].touched">
+            {{ getError("numberOfWorkYears") }}
+          </mat-error>
+        </mat-form-field>
+      </main>
+      <footer>
+        <button mat-button type="button" class="mr-2 btn-cancel" (click)="onClose()"  mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" type="button" (click)="submit(addEmploeeForm)" [disabled]="!addEmploeeForm.valid || isSubmitted">Save</button>
+      </footer>
+    </form>
+</div>
+
+
+
+

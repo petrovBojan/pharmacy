@@ -1,0 +1,74 @@
+<mat-form-field appearance="standard" floatLabel="always">
+  <mat-label>Производители</mat-label>
+  <mat-chip-list #chipList aria-label="Select a topic">
+    <mat-chip
+      *ngFor="let manufacturer of manufacturers"
+      [value]="manufacturer.ManufacturerID"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(manufacturer)">
+      {{manufacturer.Name}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      #manuInput
+      [formControl]="manuCtrl"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)"
+    >
+  </mat-chip-list>
+  <!-- <mat-error *ngIf="editSessionForm.controls['topics'].invalid && editSessionForm.controls['topics'].touched">
+    {{ getError("topics") }}
+  </mat-error> -->
+</mat-form-field>
+
+<mat-form-field appearance="standard" floatLabel="always">
+  <mat-label>Фармаколошка група</mat-label>
+  <mat-chip-list #chipListg aria-label="Select a group">
+    <mat-chip
+      *ngFor="let group of productGroup"
+      [value]="group.ProductGroupID"
+      [selectable]="selectableGroup"
+      [removable]="removableGroup"
+      (removed)="removeGroup(group)">
+      {{group.GroupName}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      #groupInput
+      [formControl]="groupCtrl"
+      [matChipInputFor]="chipListg"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="addGroup($event)"
+    >
+  </mat-chip-list>
+  <!-- <mat-error *ngIf="editSessionForm.controls['topics'].invalid && editSessionForm.controls['topics'].touched">
+    {{ getError("topics") }}
+  </mat-error> -->
+</mat-form-field>
+
+<mat-form-field appearance="standard" floatLabel="always">
+  <mat-label>Фармаколошка Форма</mat-label>
+  <mat-chip-list #chipListt aria-label="Select a type">
+    <mat-chip
+      *ngFor="let type of productType"
+      [value]="type.ProductTypeID"
+      [selectable]="selectableType"
+      [removable]="removableType"
+      (removed)="removeType(type)">
+      {{type.Name}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      #typeInput
+      [formControl]="typeCtrl"
+      [matChipInputFor]="chipListt"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="addType($event)"
+    >
+  </mat-chip-list>
+  <!-- <mat-error *ngIf="editSessionForm.controls['topics'].invalid && editSessionForm.controls['topics'].touched">
+    {{ getError("topics") }}
+  </mat-error> -->
+</mat-form-field>

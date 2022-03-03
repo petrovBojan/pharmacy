@@ -1,0 +1,93 @@
+<div>
+  <h3>For Us</h3>
+  <div>
+    <mat-card class=" mat-elevation-z3 mb-3">
+      <div class="d-flex row align-items-center ml-3 mr-3">
+        <a class="logo col-sm-4 d-inline-block align-top">
+          <img class="profile_img logo-constraints" src="../../assets/images/bio-farm.png" />
+        </a>
+        <div class="base-info col-sm-8">
+          <div class="line-info">
+            <mat-icon>info</mat-icon>
+            <span>Pharma Plus is the most comprehensive book on medical information for healthier life.
+               It is a quick and easy reference book that contains complete and authentic information on all the medicines available in Pakistan.
+               We are proud to announce that Pharma Plus is being produced by the most competent team of professionals having more than 25 years’ 
+               experience of serving the pharmaceutical industry and medical professionals which made maximum coverage of medicine information with 
+               professional accuracy possible.
+            </span>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <h3>Our Pharmacies
+    </h3>
+    <div class="row">
+      <div class="col-md-6" *ngFor="let shop of shops">
+        <mat-card class=" mat-elevation-z3 mb-3 base-info">
+          <div class="line-info">
+            <mat-icon>schedule</mat-icon>
+            <span><b style="color: yellowgreen;">Open at the moment</b>  08:00 - 21:00 </span>
+          </div>
+          <h3 class="bold">{{shop.Name}}</h3>
+          
+          <div class="line-info">
+            <mat-icon>room</mat-icon>
+            <span>Str. Hristijan Todorovski Karpos no. 31</span>
+          </div>
+          <div class="line-info">
+            <mat-icon>phone</mat-icon>
+            <span>{{shop.contact}}</span>
+          </div>
+          <div class="line-info">
+            <mat-icon>email</mat-icon>
+            <span>bio-farm@gmail.com</span>
+          </div>
+          <div class="line-info">
+            <mat-icon>schedule</mat-icon>
+            <span><b style="color: yellowgreen;">Отворено во моментов</b>  08:00 - 21:00 </span>
+          </div>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card class=" mat-elevation-z3 mb-3 base-info">
+          <div class="line-info">
+            <mat-icon>schedule</mat-icon>
+            <span><b style="color: #cd4432;">Closed at the moment</b>  08:00 - 17:00 </span>
+          </div>
+          <div class="line-info">
+            <mat-icon>room</mat-icon>
+            <span>Str. Hristijan Todorovski Karpos no. 31</span>
+          </div>
+          <div class="line-info">
+            <mat-icon>phone</mat-icon>
+            <span>078 311 068</span>
+          </div>
+          <div class="line-info">
+            <mat-icon>email</mat-icon>
+            <span>bio-farm2@gmail.com</span>
+          </div>
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+        <mat-card class=" mat-elevation-z3 mb-3 base-info">
+          <div class="line-info">
+            <mat-icon>schedule</mat-icon>
+            <span><b style="color: yellowgreen;">Open at the moment</b>  08:00 - 21:00 </span>
+          </div>
+          <div class="line-info">
+            <mat-icon>room</mat-icon>
+            <span>Injevo</span>
+          </div>
+          <div class="line-info">
+            <mat-icon>phone</mat-icon>
+            <span>032/ 630-000</span>
+          </div>
+          <div class="line-info">
+            <mat-icon>email</mat-icon>
+            <span>bio-farm-side@gmail.com</span>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

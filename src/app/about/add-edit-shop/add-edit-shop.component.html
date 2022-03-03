@@ -1,0 +1,46 @@
+<div style="position: relative;"> 
+  <button mat-icon-button [autofocus]='false' class="close-button ml-auto" type="button" (click)='onClose()' (keydown.enter)="$event.preventDefault()" (keydown.shift.enter)="$event.preventDefault()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <form [formGroup]="addShopForm" (ngSubmit)="submit(addShopForm)" >
+      <h3>Додади нов член на тимот</h3>
+      <main>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Име на аптека</mat-label>
+          <input matInput formControlName="name" required>
+          <mat-error *ngIf="addShopForm.controls['name'].invalid && addShopForm.controls['name'].touched">
+            {{ getError("name") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Адреса</mat-label>
+          <input matInput formControlName="address">
+          <mat-error *ngIf="addShopForm.controls['address'].invalid && addShopForm.controls['address'].touched">
+            {{ getError("address") }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Контакт број</mat-label>
+          <input matInput formControlName="contact" required>
+          <mat-error *ngIf="addShopForm.controls['contact'].invalid && addShopForm.controls['contact'].touched">
+            {{ getError("contact") }}
+          </mat-error>
+        </mat-form-field>
+        <!-- <mat-form-field class="mt-2" appearance="standard" floatLabel="always">
+          <mat-label >Искуство</mat-label>
+          <input matInput formControlName="numberOfWorkYears">
+          <mat-error *ngIf="addShopForm.controls['numberOfWorkYears'].invalid && addShopForm.controls['numberOfWorkYears'].touched">
+            {{ getError("numberOfWorkYears") }}
+          </mat-error>
+        </mat-form-field> -->
+      </main>
+      <footer>
+        <button mat-button type="button" class="mr-2 btn-cancel" (click)="onClose()"  mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" type="button" (click)="submit(addShopForm)" [disabled]="!addShopForm.valid">Save</button>
+      </footer>
+    </form>
+</div>
+
+
+
+

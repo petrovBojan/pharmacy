@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>{{product.Title}}</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <img class="img" [src]="product.Image">
+    </div>
+    <div class="col-md-6 base-info">
+      <div>
+        <b>Производител:</b><span>  {{product.ManufacturerName}}</span>
+      </div>
+      <div>
+        <b>Тип:</b><span>  {{product.ProductGroupName}}</span>
+      </div>
+      <div>
+        <b>Количина:</b>
+        <span *ngIf="product.ProductTypeID === '1'">  {{product.Quantity}} таблети</span>
+        <span *ngIf="product.ProductTypeID === '3'">  {{product.Quantity}} ml</span>
+        <span *ngIf="product.ProductTypeID === '4'">  {{product.Quantity}} капсули</span>
+        <span *ngIf="product.ProductTypeID === '5'">  {{product.Quantity}} ml</span>
+        <span *ngIf="product.ProductTypeID === '6'">  {{product.Quantity}} кесички</span>
+        <span *ngIf="product.ProductTypeID === '7'">  {{product.Quantity}} ml</span>
+        <span *ngIf="product.ProductTypeID === '9'">  {{product.Quantity}} парче</span>
+      </div>
+      <div>
+        <b>Цена:</b><span>  {{product.Price}} ден</span>
+      </div>
+      <!-- <div>
+        <b>Залиха:</b><span> Нема</span>
+      </div> -->
+      <div>
+        <div>
+          <b>Залиха:</b><span> {{product.HaveOnStock ? 'има' : 'нема'}}</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="description">
+    <span [innerHTML]="product.Description"></span>
+  </div>
+</div>

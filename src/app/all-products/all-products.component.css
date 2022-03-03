@@ -1,0 +1,39 @@
+.filters {
+  justify-content: space-between;
+}
+::ng-deep.custom-field .mat-select-arrow {
+    border-top: 0px solid !important;
+}
+::ng-deep.custom-field .mat-form-field-wrapper {
+    padding-bottom: unset;
+}
+::ng-deep.custom-field .mat-form-field-appearance-outline .mat-form-field-infix {
+    border-top-width: 8px;
+}
+::ng-deep.custom-field .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 12px 0 14px 0;
+}
+::ng-deep.custom-field .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+     color: #4caf50;
+}
+::ng-deep.custom-field .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color:  #4caf50;
+}
+.search {
+    width: 100%;
+}
+.select {
+  width: 100%;
+}
+.add-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.add-btn button{
+  color: #fff;
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
+}
